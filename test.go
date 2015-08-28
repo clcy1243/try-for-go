@@ -14,6 +14,7 @@ func main() {
 	if err != nil {
 		fmt.Println("连接数据库失败")
 		fmt.Println(err)
+        return;
 	}
 	status := 0
 	rows, err := db.Query("SELECT * FROM contract WHERE status=?", status)
