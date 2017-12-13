@@ -108,10 +108,3 @@ func solve() bool {
 	// no solution found for this board
 	return false
 }
-
-func main() {
-	if !solve() {
-		fmt.Println("no solution found")
-	}
-	fmt.Println(moves, "moves tried")
-}

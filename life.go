@@ -3,9 +3,7 @@ package main
 
 import (
 	"bytes"
-	"fmt"
 	"math/rand"
-	"time"
 )
 
 // Field represents a two-dimensional field of cells.
@@ -101,13 +99,4 @@ func (l *Life) String() string {
 		buf.WriteByte('\n')
 	}
 	return buf.String()
-}
-
-func main() {
-	l := NewLife(40, 15)
-	for i := 0; i < 300; i++ {
-		l.Step()
-		fmt.Print("\x0c", l) // Clear screen and print field.
-		time.Sleep(time.Second / 30)
-	}
 }

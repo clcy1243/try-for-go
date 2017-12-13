@@ -9,8 +9,6 @@
 
 package main
 
-import "fmt"
-
 // Number is a pointer to a Number
 type Number *Number
 
@@ -75,14 +73,4 @@ func count(x *Number) int {
 		return 0
 	}
 	return count(sub1(x)) + 1
-}
-
-// -------------------------------------
-// Print i! for i in [0,9]
-
-func main() {
-	for i := 0; i <= 9; i++ {
-		f := count(fact(gen(i)))
-		fmt.Println(i, "! =", f)
-	}
 }

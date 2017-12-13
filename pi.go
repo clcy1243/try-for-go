@@ -7,13 +7,8 @@
 package main
 
 import (
-	"fmt"
 	"math"
 )
-
-func main() {
-	fmt.Println(pi(5000))
-}
 
 // pi launches n goroutines to compute an
 // approximation of pi.

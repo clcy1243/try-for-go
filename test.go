@@ -9,12 +9,12 @@ import (
 	"os"
 )
 
-func main() {
+func test() {
 	db, err := sql.Open("mysql", "yuanjingtt:4MIICfgs421p@tcp(yjclwdb1.mysql.rds.aliyuncs.com:3306)/carowner")
 	if err != nil {
 		fmt.Println("连接数据库失败")
-		fmt.Println(err)
-        return;
+		// fmt.Println(err)
+		return
 	}
 	status := 0
 	rows, err := db.Query("SELECT * FROM contract WHERE status=?", status)
@@ -47,9 +47,7 @@ func main() {
 			"<script src=\"http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js\"></script>",
 			"<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->",
 			"<script src=\"http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js\"></script>",
-			"</head><body><table class=\"table\"><thead><tr>"
-			)
-		)
+			"</head><body><table class=\"table\"><thead><tr>"))
 	for _, column := range columns {
 		htmlFile.WriteString(fmt.Sprintf("<th>%v</th>", column))
 	}

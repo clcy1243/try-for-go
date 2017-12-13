@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // fib returns a function that returns
 // successive Fibonacci numbers.
 func fib() func() int {
@@ -9,13 +7,5 @@ func fib() func() int {
 	return func() int {
 		a, b = b, a+b
 		return a
-	}
-}
-
-func main() {
-	f := fib()
-	// Function calls are evaluated left-to-right.
-	for i := 0; i < 22; i++ {
-		fmt.Println(f(), " ")
 	}
 }
