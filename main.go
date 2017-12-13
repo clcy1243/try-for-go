@@ -5,16 +5,16 @@ import (
 	"time"
 )
 
-func main_pi() {
+func mainPi() {
 	fmt.Println(pi(5000))
 }
 
-func main_test() {
+func mainTest() {
 	test()
 }
 
 // The prime sieve: Daisy-chain Filter processes.
-func main_sieve() {
+func mainSieve() {
 	ch := make(chan int) // Create a new channel.
 	go Generate(ch)      // Launch Generate goroutine.
 	for i := 0; i < 10; i++ {
@@ -26,14 +26,14 @@ func main_sieve() {
 	}
 }
 
-func main_solitaire() {
+func mainSolitaire() {
 	if !solve() {
 		fmt.Println("no solution found")
 	}
 	fmt.Println(moves, "moves tried")
 }
 
-func main_tree() {
+func mainTree() {
 	t1 := New(100, 1)
 	fmt.Println(Compare(t1, New(100, 1)), "Same Contents")
 	fmt.Println(Compare(t1, New(99, 1)), "Differing Sizes")
@@ -41,7 +41,7 @@ func main_tree() {
 	fmt.Println(Compare(t1, New(101, 2)), "Dissimilar")
 }
 
-func main_life() {
+func mainLife() {
 	l := NewLife(40, 15)
 	for i := 0; i < 300; i++ {
 		l.Step()
@@ -50,7 +50,7 @@ func main_life() {
 	}
 }
 
-func main_fib() {
+func mainFib() {
 	f := fib()
 	// Function calls are evaluated left-to-right.
 	for i := 0; i < 22; i++ {
@@ -61,7 +61,7 @@ func main_fib() {
 // -------------------------------------
 // Print i! for i in [0,9]
 
-func main_peano() {
+func mainPeano() {
 	for i := 0; i <= 9; i++ {
 		f := count(fact(gen(i)))
 		fmt.Println(i, "! =", f)
@@ -70,19 +70,19 @@ func main_peano() {
 
 func main() {
 	fmt.Println("pi")
-	main_pi()
+	mainPi()
 	// fmt.Println("test")
 	// main_test()
 	fmt.Println("sieve")
-	main_sieve()
+	mainSieve()
 	fmt.Println("solitaire")
-	main_solitaire()
+	mainSolitaire()
 	fmt.Println("tree")
-	main_tree()
+	mainTree()
 	// fmt.Println("life")
 	// main_life()
 	fmt.Println("fib")
-	main_fib()
+	mainFib()
 	fmt.Println("peano")
-	main_peano()
+	mainPeano()
 }
